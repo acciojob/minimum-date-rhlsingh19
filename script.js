@@ -1,6 +1,16 @@
-function minDate(dates) {
+// function minDate(dates) {
   //write you code here
+	function minDate(dates) {
+  // Create a new array by mapping the dates to Date objects
+  const dateObjects = dates.map(dateString => new Date(dateString));
+
+  // Find the minimum date using the Date object and formatting it back to "YYYY/MM/DD"
+  const minDate = new Date(Math.min.apply(null, dateObjects)).toISOString().slice(0, 10);
+
+  return minDate;
 }
+
+// }
 
 // Do not change the code
 
